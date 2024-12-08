@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Vulnerability Checker</title>
+</head>
+<body>
+    <h1>Cybersecurity Vulnerability Checker</h1>
+    <form method="POST">
+        <label for="url">Enter Website URL (without https:// or http://):</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if url %}
+        <h2>Results for {{ url }}</h2>
+        <ul>
+            <li>{{ https_result }}</li>
+            <li>{{ ssl_result }}</li>
+            <li>{{ headers_result }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
